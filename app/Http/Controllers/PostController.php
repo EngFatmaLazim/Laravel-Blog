@@ -15,7 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        //Create a Variable and Store All the Blog Posts in it from the Databasse
+        $posts = Post::all();
+
+        // return View and pass in the Above Varible 
+        return view('posts.index')->withPosts('$posts');
     }
 
     /**
