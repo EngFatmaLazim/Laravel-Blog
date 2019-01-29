@@ -19,7 +19,7 @@ class PostController extends Controller
         $posts = Post::all();
 
         // return View and pass in the Above Varible 
-        return view('posts.index')->withPosts('$posts');
+        return view('posts.index')->withPosts($posts);
     }
 
     /**
@@ -70,7 +70,8 @@ class PostController extends Controller
      */
     public function show($id)
     {   
-        $post = post::find($id);
+        $post = Post::find($id);
+
         return view('posts.show')->withPost($post);
     }
 
